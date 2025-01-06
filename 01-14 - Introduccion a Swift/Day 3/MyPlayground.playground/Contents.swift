@@ -86,4 +86,42 @@ archienemigos["Batman"] = "Joker"
 
 archienemigos["Batman"] = "Penguin"
 
+//Conjuntos
 
+var gente = Set(["Fulanez","Menganez","Citranez"])
+print(gente)
+
+var colores = Set(["Rojo","Verde","Rojo"])
+
+
+
+//Añadir elementos al conjunto
+
+gente.insert("Otro Fulanez")
+print(gente)
+
+//Enumeraciones
+
+enum DiaSemana {
+    case lunes
+    case martes
+    case miércoles
+    case jueves
+    case viernes
+    case sábado
+    case domingo
+}
+
+var dia = DiaSemana.miércoles
+
+//También con comas
+
+enum Mes {
+    case enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre
+}
+
+//Se puede omitir el nombre de la enumeración tras la primera asignacion
+
+var mes = Mes.febrero
+mes = .abril
+mes = .diciembre
