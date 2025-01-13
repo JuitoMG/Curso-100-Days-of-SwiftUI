@@ -1,11 +1,11 @@
 import Cocoa
 
 //Condiciones
-"""
+/*
 if condicion {
     print("Haz algo")
 }
-"""
+*/
 
 let puntos = 100
 
@@ -64,7 +64,7 @@ if a {
 } else {
     print("Si ambos son falsos")
     
-var temperatura = 25
+let temperatura = 25
 
     if temperatura > 20 && temperatura < 30 {
         print("Temperatura adecuada")
@@ -108,8 +108,8 @@ case .lluvia:
     print("Llueve")
 case .desconocido:
     print("Máquina averiada")
-default:
-    print("Error")
+//default:
+  //  print("Error")
 }
 
 //Operador condicional ternario
