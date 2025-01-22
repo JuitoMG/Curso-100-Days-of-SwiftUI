@@ -64,7 +64,7 @@ let capitanPrimerEquipo = equipo.sorted(by: capitanOrdenado)
 print(capitanPrimerEquipo)
 
 
-let capPrimEqu = equipo.sorted(by: {(nombre1: String, nombre2: String) -> Bool in
+var capPrimEqu = equipo.sorted(by: {(nombre1: String, nombre2: String) -> Bool in
     if nombre1 == "Fulanez" {
         return true
     } else if nombre2 == "Fulanez" {
@@ -76,4 +76,58 @@ let capPrimEqu = equipo.sorted(by: {(nombre1: String, nombre2: String) -> Bool i
 print(capPrimEqu)
 
 
-// Quedé en el punto 2
+// Se puede hacer sin especificar el tipo de los parámetros y el retorno
+
+capPrimEqu = equipo.sorted { nombre1, nombre2 in
+    if nombre1 == "Fulanez" {
+        return true
+    } else if nombre2 == "Fulanez" {
+        return false
+    }
+    return nombre1 < nombre2
+    
+}
+
+//Los parámetros incluso se pueden sustituir por nombres especiales
+
+capPrimEqu = equipo.sorted {
+    
+    if $0 == "Fulanez" {
+        return true
+    } else if $1 == "Fulanez" {
+        return false
+    }
+    return $0 < $1
+    
+}
+
+//Hacer una ordenación inversa
+var reverseEquipo = equipo.sorted{
+    return $0 > $1
+}
+
+//O también
+
+reverseEquipo = equipo.sorted{ $0 < $1 }
+
+//Filtrar por letra
+
+var soloT = equipo.filter { $0.hasPrefix("C") }
+print(soloT)
+
+//transformar todos los elementos de la matrix con map()
+
+let uppercaseEquip = equipo.map { $0.uppercased() }
+print(uppercaseEquip)
+
+
+//Aquí uno de los parámetros es una funcion que devuelve un valor que es cogido dentro de la función
+func hacerArray(size: Int, using generator: () -> Int) -> [Int] {
+    var numeros = [Int]()
+    for _ in 0..<size {
+        let nuevoNumero = generator()
+        numeros.append(nuevoNumero)
+    }
+    return numeros
+    
+}
